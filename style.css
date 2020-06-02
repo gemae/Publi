@@ -1,0 +1,584 @@
+
+html{
+    --main-color: rgb(72, 151, 145);
+    --hover-dark-color: rgb(44, 99, 94);
+    --outline-color: rgb(175, 211, 208);
+    --font-color: rgb(27, 27, 27);
+    --fade-font2: rgb(214, 214, 214);
+    --fade-font: rgb(112, 109, 109);
+     max-width: 100vw;
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.main-container{
+    /*display: grid;
+    grid-template-columns: minmax(50px,1fr)  2fr 1fr;*/
+   max-width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+}
+/*Three main container*/
+.main-nav{
+    height: 100vh;
+    width: 450px;
+    flex-grow: 1;
+    padding-top: .5rem;
+    box-sizing: border-box; 
+ 
+}
+
+.main-body{
+   
+    border-left: 1px solid  rgb(175, 211, 208);
+    border-right: 1px solid  rgb(175, 211, 208);
+    min-width: 580px; 
+    flex-grow: 2;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main-trend{
+    padding: 2rem;
+    min-width: 350px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+/*Navigation*/
+.list .fa-american-sign-language-interpreting{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: rgb(72, 151, 145);
+    padding-left: 13px;
+}
+.list{
+    width: fit-content;
+    margin: auto;
+}
+.list li{
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    
+}
+.list i {
+    font-size: 1.7rem;
+    color: rgb(72, 151, 145);
+    padding: 13px 13px 13px 13px;
+    border-radius: 50px;
+    width: fit-content;
+   
+}
+.list i:hover{
+    background-color: rgb(175, 211, 208);
+}
+
+.list a{
+    font-weight: bold;
+    color:  var(--font-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2rem; 
+    
+ 
+}
+
+/*Twitter Wall-Profile*/
+
+
+.profile-container{
+    height: 500px;
+    border-bottom: 1px solid rgb(175, 211, 208);
+    position: relative;
+    top: 0;   
+    
+}
+.main-body .fa-american-sign-language-interpreting{
+    display: none;
+}
+.top-profile-cont{
+    height: 65%;
+}
+.bot-profile-cont{
+    height: 35%;
+}
+.top-profile-cont .profile-images{
+    width: 100%;
+    height: 85%;
+    position: relative;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.profile-images .cover-photo{
+    width: 100%;
+    height: 75%;
+   
+}
+.profile-images .profile-photo{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    left: 10px;
+}
+.profile-images .edit-profile-btn{
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(72, 151, 145);
+    align-items: center;
+    background: none;
+    border: 1.2px solid rgb(72, 151, 145);
+    padding: 10px 13px;
+    margin: 5px 15px;
+    border-radius: 50px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+.edit-profile-btn:hover{
+    background-color: var(--outline-color);
+}
+.top-profile-cont  .number-tweets{
+    font-size: .9rem;
+    color: var(--fade-font);
+}
+.top-profile-cont label:nth-child(1){
+    margin-top: 5px;
+}
+.top-profile-cont label{
+    display: block;
+    margin-left: 20px;}
+/*bottom profile cont*/
+.bot-profile-cont label{
+    display: block;
+    margin-left: 20px;
+    margin-right: -10px;
+}
+.bot-profile-cont .name,.top-profile-cont .name{
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: fit-content;
+}
+ .bot-profile-cont  .user-name{
+    font-size: .9rem;
+    color: var(--fade-font);
+    width: fit-content;
+}
+.bot-profile-cont .follow-container{
+    display: flex;
+}
+.bio{
+    margin: 13px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    width: fit-content;
+}
+.profile-text{
+    font-size: 1rem;
+   color: var(--fade-font);
+   width: fit-content;
+}
+.profile-location{
+    margin-bottom: 10px;
+    width: fit-content;
+}
+.profile-location i{
+    margin-right: 10px;
+}
+.follow-container span{
+    display: flex;
+}
+/*Navigation in Profile container*/
+.profile-container-text{
+    height: 75%;
+}
+.profile-nav{
+        width: 100%;
+        height: 25%;
+       
+}
+.profile-nav-list{
+    display: flex;
+    height: 100%;
+}
+.profile-nav-list li {
+    list-style: none;
+    cursor: pointer;
+    color: var(--fade-font);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.profile-nav-list li:active{
+
+    border-bottom: 2px solid var(--main-color);
+
+}
+.profile-nav-list li:hover{
+    background-color: var(--outline-color);
+}
+/*Tweet Container*/
+.post-tweet-container{
+    width: 100%;
+    background-color:var(--fade-font2);
+    padding: 1px;
+    box-sizing: border-box;
+  
+}
+.tweet-pad{
+    box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-bottom: 1px solid var(--outline-color);
+    background-color: white;
+    margin-bottom: .7rem;
+}
+.input-cont{
+    display: flex;
+    align-content: center;
+    
+}
+.input-cont .profile-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.input-cont input[type=text]{
+    
+    font-size: 1.3rem;
+    padding: .1rem;
+    width: 85%;
+    border: none;
+    outline: none;
+    color: var(--font-color);
+}
+.tweet-pad button{
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px 13px;
+    margin: 5px 15px;
+    border-radius: 50px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    float: right;
+}
+.tweet-pad button:hover{
+    background-color: var(--hover-dark-color);
+}
+
+
+/*TWEETED STYLE CLASS CALL BY JAVASCRIPT*/
+.main-cont{
+    min-height: 30vh;
+ 
+}
+
+.tweet{
+    display: grid;
+    min-height: 100px;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 70% 30%;
+    padding: 0 1rem;
+    background-color: white;
+    border-bottom: 1px solid var(--fade-font2);
+    
+}
+.profile-pic-cont{
+    width: 100%;
+    
+}
+.profile-pic{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.post-container{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.inline-label{
+    display: inline;
+    margin-right: 5px;
+   
+}
+.inline-label:nth-child(1){
+    font-weight: bold;
+    color: var(--font-color);
+}
+.inline-label:nth-child(2){
+    font-size: .9rem;
+    color: var(--fade-font2);
+}
+.tweet p {
+    width: 90%;
+    word-wrap: break-word;
+    padding: 5px 0;
+    font-size: .9rem;
+   color: var(--font-color);
+   margin-top: 5px;
+}
+.tweet-text{
+    height: 50%;
+    
+}
+.tweeted-cont{
+    box-sizing: border-box;
+    grid-column: 2/3;
+    display: flex;
+    
+    align-self: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.btn{
+    width: 15px;
+    display: flex;
+    margin-right: 5rem;
+    align-items: center;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    cursor: pointer;
+    outline: none;
+    
+}
+.btn i {
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+.btn i:hover{
+    font-size: 1.4rem;
+    color: var(--outline-color);
+ /*   color: rgb(150, 241, 241);*/
+}
+.btn .heart{
+    color: rgb(206, 74, 74);
+}
+
+/*Trend List Style*/
+
+.trend-list{
+    background-color:rgb(225, 245, 243);
+    border-radius: 20px;
+}
+.trend-list li{
+    list-style: none;
+    padding: 1rem;
+    border-top: 1px solid var(--fade-font2);
+}
+.trend-list li:nth-child(1){
+    border-top: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.trend-list li label:nth-child(1){
+    font-size: 1rem;
+    font-weight: bold;
+}
+.trend-list li label:nth-child(2){
+    font-size: .9rem;
+    color: var(--fade-font);
+    
+}
+.trend-list div label{
+    display: block;
+}
+
+@media screen and (max-width: 1278px){
+    /*Main Navigation*/
+    .main-nav{
+    
+        padding-right: .5rem;
+        padding-left: 3vw;
+    }
+    .list li{
+       justify-content: flex-end;
+    }
+    .list .fa-american-sign-language-interpreting{
+        padding-right: 0;
+    }
+    .list{
+        float: right;
+    }
+    .list a{
+         display: none;
+    }
+}
+@media screen and (max-width: 1110px){
+    /*trend Navigation*/
+    .main-trend{
+        min-width:300px
+    }
+    
+}
+@media screen and (max-width: 1005px){
+    /*trend Navigation*/
+    
+    .main-nav{
+        flex-grow: 1;
+    }
+    .main-body{
+        margin: 0 auto;
+        flex-grow: 2;
+    }
+    .main-trend{
+        flex-grow: 1;
+        min-width: 0;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+    }
+    .main-trend *{
+        display: none;
+     }
+
+    
+}
+@media screen and (max-width: 686px){
+    /*trend Navigation*/
+    
+   .main-nav{
+       width: fit-content;
+   }
+    .main-body{
+       width: 580px;
+       min-width: 0;
+     
+    }
+    .main-trend {
+        display: none;
+     }
+
+}
+@media screen and (max-width: 482px){
+   
+    body{
+        width: 100vw;
+        min-width: 300px;
+    }
+    .main-container{
+        min-width: 300px;
+    }
+    .main-nav{
+        display: none;
+    } 
+    .profile-container{
+        height: 480px;
+    }
+    .top-profile-cont{
+        height: 60%;
+    }
+    .bot-profile-cont{
+        height: 40%;
+    }
+    .top-profile-cont .profile-images{
+        height: 100%;
+    }
+    .top-profile-cont label:nth-child(1){
+        display: none;
+    }
+    .main-body .fa-american-sign-language-interpreting{
+        display: block;
+        font-size: 2rem;
+        margin: .6rem 1rem 0 1rem;
+        color: rgb(72, 151, 145);
+        text-align: left;
+    }
+    .profile-images .cover-photo{
+        width: 100%;
+        height: 70%;
+       
+    }
+    .profile-images .profile-photo{
+        width: 100px;
+        height: 100px;
+        bottom: 30px;
+    }
+    .profile-images .edit-profile-btn{
+        font-size: .9rem;
+        padding: 10px 10px;
+        margin-top: 10px;
+    }
+    .bot-profile-cont .follow-container label{
+        font-size: .9rem;
+    }
+ 
+    .profile-container-text{
+        height: 80%;
+    
+    }
+
+    .profile-nav{
+            width: 100%;
+            height: 20%;
+    }
+    .profile-nav-list{
+        display: flex;
+        height: 100%;
+    }
+    .profile-nav-list li:nth-child(1) {
+       border-top-right-radius: 5px;
+    }
+    .profile-nav-list li:nth-child(2) {
+        border-top-left-radius:  5px;
+        border-top-right-radius:  5px;
+     }
+     .profile-nav-list li:nth-child(3) {
+        border-top-left-radius: 5px;
+     }
+    .profile-nav-list li a{
+        text-decoration: none;
+        font-size: .9rem;
+        text-align: center;
+    }
+    .bio{
+      width: 80%;
+    }
+    .main-body{
+        margin: 0;
+        padding-top: 0;
+    }
+    .profile-container{
+        padding-top: 0;
+        margin-top: 0;
+    } 
+    .post-tweet-container .main-cont .tweet{
+        min-width: 300px;
+    }
+
+}
+

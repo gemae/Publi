@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Publi.Com</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="main-container">
+        <nav class="main-nav" id="mainNav">
+            
+            <ul class="list">
+                <i class="fa fa-american-sign-language-interpreting"></i>
+                <li><i class="fa fa-home"><a>Home</a></i></li>
+                <li><i class="fa fa-hashtag"><a>Explore</a></i></li>
+                <li><i class="fa fa-bell-o"><a>Notifications</a></i></li>
+                <li><i class="fa fa-envelope-o"><a>Messages</a></i></li>
+                <li><i class="fa fa-folder-open-o"><a>Bookmarks</a></i></li>
+                <li><i class="fa fa-list"><a>List</a></i></li>
+                <li><i class="fa fa-user"><a>Profile</a></i></li>
+                <li><i class="fa fa-ellipsis-h"><a>More</a></i></li>
+            </ul>
+        </nav>
+
+        <div class="main-body" id="mainBody">
+            <i class="fa fa-american-sign-language-interpreting"></i>
+            <div class="profile-container">
+                <div class="top-profile-cont">
+                    <label for="" id="profileName1" class="name">Ilpub</label>
+                    <label for="" id="number-of-tweets" class="number-tweets">142 Tweets</label>
+                    <div class="profile-images">
+                        <img src="img/Desert.jpg" class="cover-photo" alt="">
+                        <img src="img/Koala.jpg" class="profile-photo" id="profilePhoto" alt="">
+                    <button type="button" class="edit-profile-btn">Edit Profile</button>
+                    </div>
+                </div>
+                <div class="bot-profile-cont">
+                    <div class="profile-container-text">
+                    <label for="" id="profileName" class="name">Lipub</label>
+                    <label for="" id="userName" class="user-name">@Ilpubby</label>
+                    <label for="" id="profileBio" class="bio">It's Never too late to be what you might have been.</label>
+                    <label id="profileLocation" class="profile-location profile-text"><i class="fa fa-map-marker"></i>Davao</label>
+                    <div  class="follow-container">
+                    <span><label for="" id="profileFollowers" class="profile-followers">2</label><label class="profile-text">Followers</label></span>
+                    <span><label for="" id="profileFollowings" class="profile-followings">1,345</label><label class="profile-text">Followers</label></span>
+                    </div>
+                    </div>
+                    <nav class="profile-nav">
+                        <ul class="profile-nav-list">
+                            <li><a>Tweets</a></li>
+                            <li><a>Tweets & Replies</a></li>
+                            <li><a>Likes</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+            <div class="post-tweet-container">
+                <div class="tweet-pad">
+                    <div class="input-cont">
+                        <img src="img/Koala.jpg" class="profile-img" alt="">
+                        <input type="text" name="tweet-content" id="inputContent" placeholder="What's Happening?">
+                    </div>
+                    <button type="button" onclick="addContainer();" id="btn-tweet">Tweet</button>
+                </div>
+                <div class="main-cont" id="parents">
+                    <!--Tweeter Post Area-->
+                    
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="main-trend">
+            <ul class="trend-list">
+                <li class="trend-country">Philippine Trend</li>
+                <li class="trend" id="trendOne">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendTwo">
+                    <div>
+                        <label for="" class="trend-name">Lebron</label>
+                        <label for="" class="total-tweets">600K Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendThree">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendFour">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendFive">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendSix">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendSeven">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets" >1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendEight">
+                    <div>
+                        <label for="" class="trend-name">#NBAFinals2020</label>
+                        <label for="" class="total-tweets">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendNine">
+                    <div>
+                        <label for="">#NBAFinals2020</label>
+                        <label for="">1.2M Tweets</label>
+                    </div>
+                </li>
+                <li class="trend" id="trendTen">
+                    <div>
+                        <label for="">#NBAFinals2020</label>
+                        <label for="">1.2M Tweets</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script src="main.js">
+
+</script>
+</body>
+</html>
