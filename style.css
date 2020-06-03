@@ -11,11 +11,12 @@ html{
 }
 
 *{
+    font-family: "Antic";
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 body{
+
     max-width: 1300px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -30,7 +31,8 @@ body{
 }
 /*Three main container*/
 .main-nav{
-    height: 100vh;
+   
+    min-height: 100vh;
     width: 450px;
     flex-grow: 1;
     padding-top: .5rem;
@@ -91,7 +93,7 @@ body{
     text-decoration: none;
     margin-left: 20px;
     font-size: 1.2rem; 
-    
+    font-family: "Antic";
  
 }
 
@@ -276,6 +278,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     border: none;
     outline: none;
     color: var(--font-color);
+    font-weight: bold;
 }
 .tweet-pad button{
     font-size: 1rem;
@@ -300,7 +303,7 @@ button[type="button"]:focus, button[type="button"]:focus{
 
 /*TWEETED STYLE CLASS CALL BY JAVASCRIPT*/
 .main-cont{
-    min-height: 30vh;
+    min-height: 50vh;
     width: 100%;
 }
 
@@ -339,7 +342,7 @@ button[type="button"]:focus, button[type="button"]:focus{
    
 }
 .inline-label:nth-child(1){
-    font-weight: bold;
+    font-weight: bolder;
     color: var(--font-color);
 }
 .inline-label:nth-child(2){
@@ -351,12 +354,13 @@ button[type="button"]:focus, button[type="button"]:focus{
     word-wrap: break-word;
     padding: 5px 0;
     font-size: .9rem;
-   color: var(--font-color);
-   margin-top: 5px;
+    color: var(--font-color);
+     margin-top: 5px;
+     font-weight: bold;
 }
 .tweet-text{
     height: 50%;
-    
+   
 }
 .tweeted-cont{
     box-sizing: border-box;
