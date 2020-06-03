@@ -151,6 +151,10 @@ body{
     outline: none;
     cursor: pointer;
 }
+button[type="button"]:focus {
+    outline: none;
+    box-shadow: none !important;
+}
 .edit-profile-btn:hover{
     background-color: var(--outline-color);
 }
@@ -364,7 +368,7 @@ body{
 }
 
 .btn{
-    width: 15px;
+    width: fit-content;
     display: flex;
     margin-right: 5rem;
     align-items: center;
@@ -379,6 +383,7 @@ body{
 .btn i {
     color: var(--main-color);
     font-size: 1.5rem;
+   
 }
 .btn i:hover{
     font-size: 1.4rem;

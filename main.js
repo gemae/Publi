@@ -8,7 +8,7 @@
  
 
 
-    
+
     function addContainer() {
         //cretate parent element
         var elem = document.createElement("div");
@@ -56,6 +56,9 @@
        postCont.appendChild(tweet);
        tweet.classList.add("tweet-text");
       
+      
+      
+
        //add name text to label elemnt
        //get the text first from profile
         var nameFromProf = document.getElementById("profileName").innerText;
@@ -100,6 +103,8 @@
        var parentDelete = document.getElementById("parents");
            deleteBtn.onclick = function () {
            parentDelete.removeChild(elem);
+           var numOfTweet = parentEl.children.length;
+           numTweet(numOfTweet);
        }
        
        var parentHeart = heartBtn.firstElementChild;
@@ -116,6 +121,19 @@
            }
            
        }
-     
+        //Count Number of Tweets
+        var numOfTweet = parentEl.children.length;
+       numTweet(numOfTweet);
+       
+   }
 
+   function numTweet(num){
+    var numTweetLabel = document.getElementById("numberTweets");
+    if(num != 0){
+        numTweetLabel.innerHTML = num + " Tweets";
+    }
+    else{
+        numTweetLabel.innerHTML = "0 Tweet";
+    }
+   
    }
