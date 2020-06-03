@@ -151,8 +151,8 @@ body{
     outline: none;
     cursor: pointer;
 }
-button[type="button"]:focus {
-    outline: none;
+button[type="button"]:focus, button[type="button"]:focus{
+    outline: none !important;
     box-shadow: none !important;
 }
 .edit-profile-btn:hover{
@@ -301,17 +301,18 @@ button[type="button"]:focus {
 /*TWEETED STYLE CLASS CALL BY JAVASCRIPT*/
 .main-cont{
     min-height: 30vh;
- 
+    width: 100%;
 }
 
 .tweet{
     display: grid;
     min-height: 100px;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 70% 30%;
     padding: 0 1rem;
     background-color: white;
     border-bottom: 1px solid var(--fade-font2);
+    max-width: 100vw;
     
 }
 .profile-pic-cont{
