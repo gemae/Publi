@@ -42,8 +42,7 @@ body{
 
 .main-body{
    
-    border-left: 1px solid  rgb(175, 211, 208);
-    border-right: 1px solid  rgb(175, 211, 208);
+    
     min-width: 580px; 
     flex-grow: 2;
     box-sizing: border-box;
@@ -83,6 +82,7 @@ body{
     width: fit-content;
    
 }
+
 .list i:hover{
     background-color: rgb(175, 211, 208);
 }
@@ -105,6 +105,9 @@ body{
     border-bottom: 1px solid rgb(175, 211, 208);
     position: relative;
     top: 0;   
+    border-left: 1px solid  rgb(175, 211, 208);
+    border-right: 1px solid  rgb(175, 211, 208);
+ 
     
 }
 .main-body .fa-american-sign-language-interpreting{
@@ -121,7 +124,7 @@ body{
     height: 85%;
     position: relative;
     text-align: right;
-    margin-top: 10px;
+    
 }
 
 .profile-images .cover-photo{
@@ -160,14 +163,14 @@ button[type="button"]:focus, button[type="button"]:focus{
 .edit-profile-btn:hover{
     background-color: var(--outline-color);
 }
-.top-profile-cont  .number-tweets{
+.to-fixed-top .number-tweets{
     font-size: .9rem;
     color: var(--fade-font);
 }
-.top-profile-cont label:nth-child(1){
+.to-fixed-top label:nth-child(1){
     margin-top: 5px;
 }
-.top-profile-cont label{
+.to-fixed-top  label{
     display: block;
     margin-left: 20px;}
 /*bottom profile cont*/
@@ -176,7 +179,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     margin-left: 20px;
     margin-right: -10px;
 }
-.bot-profile-cont .name,.top-profile-cont .name{
+.bot-profile-cont .name,.profile-container .name{
     font-size: 1.2rem;
     font-weight: bold;
     width: fit-content;
@@ -234,7 +237,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     justify-content: center;
     font-weight: bold;
 }
-.profile-nav-list li:active{
+.active{
 
     border-bottom: 2px solid var(--main-color);
 
@@ -270,15 +273,16 @@ button[type="button"]:focus, button[type="button"]:focus{
     border-radius: 50%;
     margin-right: 10px;
 }
-.input-cont input[type=text]{
-    
-    font-size: 1.3rem;
+.input-cont textarea{
+    font-size: 1rem;
     padding: .1rem;
     width: 85%;
     border: none;
     outline: none;
+    overflow: hidden;
     color: var(--font-color);
     font-weight: bold;
+    word-wrap: break-word;
 }
 .tweet-pad button{
     font-size: 1rem;
@@ -305,21 +309,23 @@ button[type="button"]:focus, button[type="button"]:focus{
 .main-cont{
     min-height: 50vh;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .tweet{
     display: grid;
     min-height: 100px;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 70% 30%;
-    padding: 0 1rem;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: fit-content fit-content;
+    padding: 0 10px;
     background-color: white;
     border-bottom: 1px solid var(--fade-font2);
     max-width: 100vw;
-    
+    box-sizing: border-box;
 }
 .profile-pic-cont{
-    width: 100%;
+    width: fit-content;
+
     
 }
 .profile-pic{
@@ -355,21 +361,22 @@ button[type="button"]:focus, button[type="button"]:focus{
     padding: 5px 0;
     font-size: .9rem;
     color: var(--font-color);
-     margin-top: 5px;
-     font-weight: bold;
+    margin-top: 5px;
+    font-weight: bold;
+    box-sizing: border-box;
 }
 .tweet-text{
-    height: 50%;
+    height: 100%;
    
 }
 .tweeted-cont{
-    box-sizing: border-box;
+    
     grid-column: 2/3;
     display: flex;
-    
     align-self: center;
     padding-bottom: 10px;
     padding-top: 10px;
+   padding-left: .3rem;
 }
 
 .btn{
@@ -383,6 +390,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     border-radius: 0px;
     cursor: pointer;
     outline: none;
+    box-sizing: border-box;
     
 }
 .btn i {
@@ -492,7 +500,11 @@ button[type="button"]:focus, button[type="button"]:focus{
     .main-trend {
         display: none;
      }
+     .tweet{
 
+        grid-template-columns: 13% 87%;
+       
+    }
 }
 @media screen and (max-width: 482px){
    
@@ -508,19 +520,33 @@ button[type="button"]:focus, button[type="button"]:focus{
     } 
     .profile-container{
         height: 480px;
+
     }
     .top-profile-cont{
         height: 60%;
+       
     }
+    .profile-container{
+        margin-top: 60px;
+       
+    }
+    .to-fixed-top {
+        position: fixed; 
+        z-index: 2; 
+        height: fit-content;
+        width: 100vw;
+        background-color: white;
+     }
     .bot-profile-cont{
         height: 40%;
     }
     .top-profile-cont .profile-images{
         height: 100%;
     }
-    .top-profile-cont label:nth-child(1){
+  .to-fixed-top label:nth-child(2){
         display: none;
     }
+   
     .main-body .fa-american-sign-language-interpreting{
         display: block;
         font-size: 2rem;
@@ -582,12 +608,18 @@ button[type="button"]:focus, button[type="button"]:focus{
         margin: 0;
         padding-top: 0;
     }
-    .profile-container{
-        padding-top: 0;
-        margin-top: 0;
-    } 
+
     .post-tweet-container .main-cont .tweet{
         min-width: 300px;
+    }
+    .tweet{
+
+        grid-template-columns: 15% 85%;
+    box-sizing: border-box;
+    }
+    .tweet p {
+       padding-left: .5rem;
+        
     }
 
 }

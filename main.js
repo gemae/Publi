@@ -6,10 +6,21 @@
     }*/
     
  
+//to set Active link in Profile Navigation
+var profileParentNav = document.getElementById("profileNav");
+//get link element inside parentNav
+var link = profileParentNav.getElementsByClassName("pnav-li");
+
+for(var i = 0; i < link.length; i++){
+    link[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active","");
+        this.className += " active";
+    });
+}
 
 
-
-    function addContainer() {
+function addContainer() {
         //cretate parent element
         var elem = document.createElement("div");
         //create parent container for post and username 
@@ -129,11 +140,11 @@
 
    function numTweet(num){
     var numTweetLabel = document.getElementById("numberTweets");
-    if(num != 0){
+    if(num > 1){
         numTweetLabel.innerHTML = num + " Tweets";
     }
     else{
-        numTweetLabel.innerHTML = "0 Tweet";
+        numTweetLabel.innerHTML = num + " Tweet";
     }
    
    }

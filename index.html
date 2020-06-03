@@ -24,11 +24,15 @@
         </nav>
 
         <div class="main-body" id="mainBody">
-            <i class="fa fa-american-sign-language-interpreting"></i>
+            <div class="to-fixed-top">
+                <i class="fa fa-american-sign-language-interpreting"></i>
+                <label for="" id="profileName1" class="name">Ilpub</label>
+                <label for="" id="numberTweets" class="number-tweets">0 Tweet</label>
+            </div>
             <div class="profile-container">
+                
                 <div class="top-profile-cont">
-                    <label for="" id="profileName1" class="name">Ilpub</label>
-                    <label for="" id="numberTweets" class="number-tweets">0 Tweet</label>
+                    
                     <div class="profile-images">
                         <img src="img/Desert.jpg" class="cover-photo" alt="">
                         <img src="img/Koala.jpg" class="profile-photo" id="profilePhoto" alt="">
@@ -42,15 +46,15 @@
                     <label for="" id="profileBio" class="bio">It's Never too late to be what you might have been.</label>
                     <label id="profileLocation" class="profile-location profile-text"><i class="fa fa-map-marker"></i>Davao</label>
                     <div  class="follow-container">
-                    <span><label for="" id="profileFollowers" class="profile-followers">2</label><label class="profile-text">Followers</label></span>
-                    <span><label for="" id="profileFollowings" class="profile-followings">1,345</label><label class="profile-text">Followers</label></span>
+                    <span><label for="" id="profileFollowers" class="profile-followers">1,386</label><label class="profile-text">Followers</label></span>
+                    <span><label for="" id="profileFollowing" class="profile-following">2</label><label class="profile-text">Following</label></span>
                     </div>
                     </div>
-                    <nav class="profile-nav">
-                        <ul class="profile-nav-list">
-                            <li><a>Post</a></li>
-                            <li><a>Post & Replies</a></li>
-                            <li><a>Likes</a></li>
+                    <nav class="profile-nav" >
+                        <ul class="profile-nav-list" id="profileNav">
+                            <li class="pnav-li active"><a>Post</a></li>
+                            <li  class="pnav-li"><a>Post & Replies</a></li>
+                            <li  class="pnav-li"><a>Likes</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -60,7 +64,8 @@
                 <div class="tweet-pad">
                     <div class="input-cont">
                         <img src="img/Koala.jpg" class="profile-img" alt="">
-                        <input type="text" name="tweet-content" id="inputContent" placeholder="What's Happening?">
+                       <textarea name="tweet-content" id="inputContent" placeholder="What's Happening?" cols="15" rows="3"></textarea>
+                       <!--<input type="text" name="tweet-content" id="inputContent" placeholder="What's Happening?"> --> 
                     </div>
                     <button type="button" onclick="addContainer();" id="btn-tweet">Tweet</button>
                 </div>
