@@ -14,8 +14,7 @@ html{
     font-family: "Antic";
     margin: 0;
     padding: 0;
-}
-body{
+}body{
 
     max-width: 1300px;
     margin: 0 auto;
@@ -28,15 +27,23 @@ body{
    max-width: 100vw;
     display: flex;
     box-sizing: border-box;
+    position: relative;
 }
 /*Three main container*/
-.main-nav{
-   
+.nav-wrapper{
     min-height: 100vh;
     width: 450px;
     flex-grow: 1;
-    padding-top: .5rem;
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.main-nav{
+   width: fit-content;
+   padding-top: 2rem;
+   box-sizing: border-box;
+   position: fixed;
  
 }
 
@@ -50,12 +57,14 @@ body{
 }
 
 .main-trend{
-    padding: 2rem;
+  
+    height: fit-content;
     min-width: 350px;
     flex-grow: 1;
     box-sizing: border-box;
+    position: relative;
+    display: flex;
 }
-
 /*Navigation*/
 .list .fa-american-sign-language-interpreting{
     font-size: 2.5rem;
@@ -66,6 +75,7 @@ body{
 .list{
     width: fit-content;
     margin: auto;
+    position: relative;
 }
 .list li{
     list-style: none;
@@ -112,6 +122,10 @@ body{
 }
 .main-body .fa-american-sign-language-interpreting{
     display: none;
+}
+.to-fixed-top{
+    border-left: 1px solid  rgb(175, 211, 208);
+    border-right: 1px solid  rgb(175, 211, 208);
 }
 .top-profile-cont{
     height: 65%;
@@ -410,11 +424,19 @@ button[type="button"]:focus, button[type="button"]:focus{
 /*Trend List Style*/
 
 .trend-list{
+ 
     background-color:rgb(225, 245, 243);
     border-radius: 20px;
+    margin: 2rem;
+    position: fixed;
+    
+    
 }
 .trend-list li{
+   
+    box-sizing: border-box;
     list-style: none;
+    min-width: 300px;
     padding: 1rem;
     border-top: 1px solid var(--fade-font2);
 }
@@ -438,20 +460,20 @@ button[type="button"]:focus, button[type="button"]:focus{
 
 @media screen and (max-width: 1278px){
     /*Main Navigation*/
-    .main-nav{
+    .nav-wrapper{
     
-        padding-right: .5rem;
-        padding-left: 3vw;
+       
+        justify-content: flex-end;
     }
-    .list li{
-       justify-content: flex-end;
-    }
+   .main-nav{
+    padding-right: .5rem;
+    padding-left: 3vw;
+    float: right;
+   }
     .list .fa-american-sign-language-interpreting{
         padding-right: 0;
     }
-    .list{
-        float: right;
-    }
+   
     .list a{
          display: none;
     }
@@ -459,14 +481,17 @@ button[type="button"]:focus, button[type="button"]:focus{
 @media screen and (max-width: 1110px){
     /*trend Navigation*/
     .main-trend{
-        min-width:300px
+        min-width:330px;
+    }
+    .trend-list li{
+        min-width:270px
     }
     
 }
 @media screen and (max-width: 1005px){
     /*trend Navigation*/
     
-    .main-nav{
+    .nav-wrapper{
         flex-grow: 1;
     }
     .main-body{
@@ -489,21 +514,21 @@ button[type="button"]:focus, button[type="button"]:focus{
 @media screen and (max-width: 686px){
     /*trend Navigation*/
     
-   .main-nav{
-       width: fit-content;
+   .nav-wrapper{
+    width: 15%;
+    min-width: 0;
    }
     .main-body{
-       width: 580px;
-       min-width: 0;
-     
+      width: 85%;
+     min-width: 0;
     }
+
     .main-trend {
         display: none;
      }
-     .tweet{
 
-        grid-template-columns: 13% 87%;
-       
+     .tweet{
+        grid-template-columns: 13% 87%;    
     }
 }
 @media screen and (max-width: 482px){
@@ -515,7 +540,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     .main-container{
         min-width: 300px;
     }
-    .main-nav{
+    .nav-wrapper{
         display: none;
     } 
     .profile-container{

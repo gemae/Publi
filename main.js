@@ -1,8 +1,18 @@
-/*
-    document.body.onresize = () => {
-    var MainNavWidth = getComputedStyle(document.getElementById("mainNav")).getPropertyValue("width");
+  /*  var MainNavWidth1 = getComputedStyle(document.getElementById("mainNav")).getPropertyValue("width");
     var mainBody = document.getElementById("mainBody");
-    mainBody.style.marginLeft = MainNavWidth;
+    mainBody.style.marginLeft = MainNavWidth1;  
+    var mainNav = document.getElementById("mainNav");
+    //while window resizing
+   
+    document.body.onresize = () => {
+    var MainNavWidth2 = getComputedStyle(document.getElementById("mainNav")).getPropertyValue("width");
+    mainBody.style.marginLeft = MainNavWidth2;
+    var MainNavWidth3 = getComputedStyle(document.getElementById("mainNav")).getPropertyValue("width");
+    var sp = MainNavWidth3.split(/[A-Za-z]/);
+    var j = sp.join("");
+    if(window.innerWidth <= 1366){
+        mainNav.style.width = j - 2 + "px";
+    }
     }*/
     
  
