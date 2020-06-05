@@ -55,9 +55,9 @@
                     </div>
                     <nav class="profile-nav" >
                         <ul class="profile-nav-list" id="profileNav">
-                            <li class="pnav-li active"><a>Post</a></li>
-                            <li  class="pnav-li"><a>Post & Replies</a></li>
-                            <li  class="pnav-li"><a>Likes</a></li>
+                            <li class="pnav-li active" onclick="showTab(0);"><a>Post</a></li>
+                            <li  class="pnav-li" onclick="showTab(1);"><a>Post & Replies</a></li>
+                            <li  class="pnav-li" onclick="showTab(2);"><a>Likes</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -72,9 +72,15 @@
                     </div>
                     <button type="button" onclick="addContainer();" id="btn-tweet">Tweet</button>
                 </div>
-                <div class="main-cont" id="parents">
+                <div class="main-cont cont" id="parents">
                     <!--Tweeter Post Area-->
                     
+                </div>
+                <div class="replies-cont cont">
+
+                </div>
+                <div class="likes-cont cont" id="likesId">
+
                 </div>
 
             </div>

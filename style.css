@@ -318,13 +318,15 @@ button[type="button"]:focus, button[type="button"]:focus{
     background-color: var(--hover-dark-color);
 }
 
-
-/*TWEETED STYLE CLASS CALL BY JAVASCRIPT*/
-.main-cont{
+/*THREE MAIN CONTAINER POST/REPLIES/LIKES*/
+.cont{
     min-height: 50vh;
     width: 100%;
     box-sizing: border-box;
+    display: none;
 }
+/*TWEETED STYLE CLASS CALL BY JAVASCRIPT*/
+
 
 .tweet{
     display: grid;
@@ -429,7 +431,7 @@ button[type="button"]:focus, button[type="button"]:focus{
     border-radius: 20px;
     margin: 2rem;
     position: fixed;
-    
+  
     
 }
 .trend-list li{

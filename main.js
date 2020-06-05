@@ -15,7 +15,20 @@
     }
     }*/
     
- 
+ //POST/REPLIES/LIKES FUNCTIONS
+ var profileTabBtn = document.querySelectorAll(".profile-nav-list .pnav-li");
+ var tabPanels = document.querySelectorAll(".post-tweet-container .cont");
+
+ function showTab(tabIndex){
+     tabPanels.forEach(function(me){
+        me.style.display = "none";
+     });
+     tabPanels[tabIndex].style.display = "block";
+     
+ }
+showTab(0);
+
+
 //to set Active link in Profile Navigation
 var profileParentNav = document.getElementById("profileNav");
 //get link element inside parentNav
@@ -29,7 +42,7 @@ for(var i = 0; i < link.length; i++){
     });
 }
 
-
+//POST TWEETS
 function addContainer() {
         //cretate parent element
         var elem = document.createElement("div");
@@ -59,7 +72,10 @@ function addContainer() {
        elem.classList.add("tweet");
        //profile elements
        elem.appendChild(profileCont);
+
+       //to insert the child element on first array list in parent
        parentEl.insertBefore(elem, parentEl.getElementsByTagName("div")[0]); 
+      
        profileCont.classList.add("profile-pic-cont");
        profileCont.appendChild(img);
        img.classList.add("profile-pic");
@@ -127,24 +143,27 @@ function addContainer() {
            var numOfTweet = parentEl.children.length;
            numTweet(numOfTweet);
        }
-       
+        //Count Number of Tweets
+        var numOfTweet = parentEl.children.length;
+        numTweet(numOfTweet);
+       //HEART/LIKE BUTTON FUNCTION
        var parentHeart = heartBtn.firstElementChild;
-       console.log(parentHeart);
+       var clone = elem.cloneNode(true);
        var parentChildColor = 0;
        heartBtn.onclick = function () {
            if(parentChildColor == 0){
                parentHeart.style.color = "rgb(206, 74, 74)";
                parentChildColor = 1;
+              likes(clone);
            }
            else{
                parentHeart.style.color = "rgb(72, 151, 145)";
                parentChildColor = 0;
+               delLikes(clone);
            }
            
        }
-        //Count Number of Tweets
-        var numOfTweet = parentEl.children.length;
-       numTweet(numOfTweet);
+      
        
    }
 
@@ -157,4 +176,15 @@ function addContainer() {
         numTweetLabel.innerHTML = num + " Tweet";
     }
    
+   }
+
+   function likes(likePostElement){
+       var likeId  = document.getElementById("likesId");
+       likeId.appendChild(likePostElement);
+
+   }
+
+   function delLikes(unLikePostElement){
+    var likeId  = document.getElementById("likesId");
+    likeId.removeChild(unLikePostElement);
    }
