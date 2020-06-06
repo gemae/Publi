@@ -6,7 +6,20 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-<body>
+<body onscroll="scrollWin();">
+    <div class="modal">
+        <div class= "modal-pop">
+            <p class="close">+</p>
+            <h2>Reply to...</h2>
+            <section class="reply-section">
+                <img src="img/Desert.jpg" alt="Account to be replied on">
+                <p class="to-reply-name">Lipub</p>
+                <p class="to-reply-post">i miss you so much</p>
+            </section>
+            <textarea name="reply" id="replyInput" cols="30" rows="3" placeholder="Write your Reply here..."></textarea>
+            <a href="#" type="button" class="reply-btn" id="replyBtn">Reply</a>
+        </div>
+    </div>
     <div class="main-container" id="mainCont">
         <div class="nav-wrapper">
             <nav class="main-nav" id="mainNav">
@@ -90,7 +103,7 @@
 
        
         <div class="main-trend">
-            <ul class="trend-list">
+            <ul class="trend-list" id="trendList">
                 <li class="trend-country">Philippine Trend</li>
                 <li class="trend" id="trendOne">
                     <div>

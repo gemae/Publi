@@ -14,32 +14,66 @@
         mainNav.style.width = j - 2 + "px";
     }
     }*/
+    //Modal popup
+    var modal = document.querySelector(".modal");
+    var close = document.querySelector(".close");
+    function popUp(){
+        modal.style.display = "flex";
+    }
+    close.addEventListener("click", function(){
+        modal.style.display = "none";
+    });
     
+
+    //TRENDLIST SCROLL
+    var trendlist = document.getElementById("trendList");
+    var sticky = trendlist.offsetHeight;
+    console.log(sticky);
+    function scrollWin(){
+    if(window.pageYOffset >= sticky){
+        trendlist.classList.add("fixedCont");
+    }
+    else{
+        trendlist.classList.remove("fixedCont");
+    }
+}
+
  //POST/REPLIES/LIKES FUNCTIONS
  var profileTabBtn = document.querySelectorAll(".profile-nav-list .pnav-li");
  var tabPanels = document.querySelectorAll(".post-tweet-container .cont");
+//to getv Active tab ID
+var current = document.getElementsByClassName("active");
 
+//to set Active link in Profile Navigation
+
+//get link element inside parentNav
+
+var profileParentNav = document.getElementById("profileNav");
+var link = profileParentNav.getElementsByClassName("pnav-li");
+
+//show tab
  function showTab(tabIndex){
      tabPanels.forEach(function(me){
         me.style.display = "none";
      });
      tabPanels[tabIndex].style.display = "block";
-     
+     if(tabIndex === 0){
+         currentTab(current,link[0]);
+     }
  }
 showTab(0);
 
-
-//to set Active link in Profile Navigation
-var profileParentNav = document.getElementById("profileNav");
-//get link element inside parentNav
-var link = profileParentNav.getElementsByClassName("pnav-li");
-
+//set actice button tab
 for(var i = 0; i < link.length; i++){
     link[i].addEventListener("click", function(){
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active","");
-        this.className += " active";
+        
+        currentTab(current,this);
     });
+}
+
+function currentTab(current,li){
+    current[0].className = current[0].className.replace(" active","");
+    li.className += " active";
 }
 
 //POST TWEETS
@@ -62,7 +96,11 @@ function addContainer() {
        var commentBtn = document.createElement("button");
        var heartBtn = document.createElement("button");
        var deleteBtn = document.createElement("button");
-    
+        //comment
+        commentBtn.onclick = function(){
+            popUp();
+        }
+
        //make an array for buttons to add
        var btnArr = [commentBtn,heartBtn,deleteBtn];
        //get Parent element
@@ -93,9 +131,6 @@ function addContainer() {
        postCont.appendChild(tweet);
        tweet.classList.add("tweet-text");
       
-      
-      
-
        //add name text to label elemnt
        //get the text first from profile
         var nameFromProf = document.getElementById("profileName").innerText;
@@ -136,25 +171,21 @@ function addContainer() {
           tweet.innerHTML = document.getElementById("inputContent").value;
           document.getElementById("inputContent").value = "";
      
-      //delete tweet
-       var parentDelete = document.getElementById("parents");
-           deleteBtn.onclick = function () {
-           parentDelete.removeChild(elem);
-           var numOfTweet = parentEl.children.length;
-           numTweet(numOfTweet);
-       }
+     
+       
         //Count Number of Tweets
         var numOfTweet = parentEl.children.length;
         numTweet(numOfTweet);
        //HEART/LIKE BUTTON FUNCTION
        var parentHeart = heartBtn.firstElementChild;
-       var clone = elem.cloneNode(true);
+        var clone;
        var parentChildColor = 0;
        heartBtn.onclick = function () {
            if(parentChildColor == 0){
                parentHeart.style.color = "rgb(206, 74, 74)";
                parentChildColor = 1;
-              likes(clone);
+               clone = elem.cloneNode(true);
+               likes(clone);
            }
            else{
                parentHeart.style.color = "rgb(72, 151, 145)";
@@ -163,9 +194,21 @@ function addContainer() {
            }
            
        }
-      
+      showTab(0);
+
+       //delete tweet
+       var parentDelete = document.getElementById("parents");
+       var parentLikes = document.getElementById("likesId");
+           deleteBtn.onclick = function () {
+           parentDelete.removeChild(elem);
+           var numOfTweet = parentEl.children.length;
+           numTweet(numOfTweet);
+           delLikes(clone);
+
+       }
        
    }
+   
 
    function numTweet(num){
     var numTweetLabel = document.getElementById("numberTweets");

@@ -8,6 +8,7 @@ html{
     --fade-font: rgb(112, 109, 109);
      max-width: 100vw;
     box-sizing: border-box;
+    position: relative;
 }
 
 *{
@@ -19,6 +20,104 @@ html{
     max-width: 1300px;
     margin: 0 auto;
     box-sizing: border-box;
+}
+/*Modal Style*/
+.modal{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 10;
+    
+}
+.modal-pop{
+    width: 600px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    position: sticky;
+    top: 30%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+
+}
+
+.modal-pop .close{
+    transform: rotate(45deg);
+    font-size: 2rem;
+    position: absolute;
+    top: 0  ;
+    right: 10px;
+    cursor: pointer;
+}
+.modal-pop .close:hover{
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+.modal-pop h3{
+    font-weight: bold;
+    
+}
+
+.modal-pop .reply-section{
+    display: flex;
+    padding: .5rem 2rem;
+    opacity: .7;
+    box-sizing: border-box;
+}
+
+.reply-section img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.reply-section .to-reply-name{
+    font-weight: bold;
+    font-size: .9rem;
+    padding-right:.2rem;
+}
+.reply-section .to-reply-post{
+    border: .9px solid var(--fade-font2);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width: 500px;
+    text-align: left;
+    padding: 0 .5rem; 
+}
+.modal-pop textarea{
+    width: 100%;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--fade-font2);
+    padding-top: .3rem;
+}
+.modal-pop .reply-btn{
+    text-decoration: none;
+    border-radius: 20px;
+    padding:.5rem;
+    background-color: var(--main-color);
+    margin-top: .5rem;
+    display: block;
+    width: 60px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    margin-left: auto;
 }
 
 .main-container{
@@ -430,10 +529,14 @@ button[type="button"]:focus, button[type="button"]:focus{
     background-color:rgb(225, 245, 243);
     border-radius: 20px;
     margin: 2rem;
-    position: fixed;
-  
-    
+    position: relative;
 }
+/*connect to javascript for fixed container*/
+.fixedCont{
+    position: fixed;
+    height: 1000px;
+}
+
 .trend-list li{
    
     box-sizing: border-box;
@@ -532,6 +635,23 @@ button[type="button"]:focus, button[type="button"]:focus{
      .tweet{
         grid-template-columns: 13% 87%;    
     }
+
+/*MODAL*/
+
+.modal-pop{
+    width: 90%;
+    height: fit-content;
+}
+
+.modal-pop .reply-section{
+    padding: .5rem 1rem;
+}
+
+.reply-section .to-reply-post{
+
+    width: 80%;
+}
+ 
 }
 @media screen and (max-width: 482px){
    
