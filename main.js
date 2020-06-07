@@ -15,18 +15,27 @@
     }
     }*/
     //Modal popup
-   
+  function toReply(img,repName,repPost){
+    var imgRep = document.querySelector(".to-reply-img");
+    var nameRep = document.querySelector(".to-reply-name");
+    var postRep = document.querySelector(".to-reply-post");
+    var toRepImg = img.getAttribute("src");
+    imgRep.setAttribute("src", toRepImg);
+    nameRep.innerHTML = repName;
+    postRep.innerHTML = repPost;
+  }
 
     var modal = document.querySelector(".modal");
     var close = document.querySelector(".close");
     var html = document.getElementById("html");
-    function popUp(){
+    function popUp(img,repName,repPost){
         
     
     var scrollHeight = window.pageYOffset;
         modal.style.display = "flex";
         modal.style.top = scrollHeight + "px";
-       html.style.overflow = "hidden";
+        html.style.overflow = "hidden";
+        toReply(img,repName,repPost);
     }
     close.addEventListener("click", function(){
         modal.style.display = "none";
@@ -105,10 +114,7 @@ function addContainer() {
        var commentBtn = document.createElement("button");
        var heartBtn = document.createElement("button");
        var deleteBtn = document.createElement("button");
-        //comment
-        commentBtn.onclick = function(){
-            popUp();
-        }
+        
 
        //make an array for buttons to add
        var btnArr = [commentBtn,heartBtn,deleteBtn];
@@ -152,6 +158,7 @@ function addContainer() {
          var profilePic = document.getElementById("profilePhoto").getAttribute("src");
         //add the getAttribute to created ELement Image
         img.setAttribute("src", profilePic);
+        
          //add buttons to container and add container to parent Div
        for(let l = 0; l< btnArr.length; l++){
           
@@ -180,7 +187,12 @@ function addContainer() {
           tweet.innerHTML = document.getElementById("inputContent").value;
           document.getElementById("inputContent").value = "";
      
-     
+     //COMMENT
+     var repName = name.innerText;
+     var repPost = tweet.innerText;
+     commentBtn.onclick = function(){
+        popUp(img,repName,repPost);
+    }
        
         //Count Number of Tweets
         var numOfTweet = parentEl.children.length;
@@ -212,7 +224,10 @@ function addContainer() {
            parentDelete.removeChild(elem);
            var numOfTweet = parentEl.children.length;
            numTweet(numOfTweet);
-           delLikes(clone);
+           if(parentChildColor == 1) {
+            delLikes(clone);
+           }
+           
 
        }
        

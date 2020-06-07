@@ -90,6 +90,7 @@ html{
     width: 500px;
     text-align: left;
     padding: 0 .5rem; 
+    overflow: hidden;
 }
 .modal-pop textarea{
     width: 100%;
