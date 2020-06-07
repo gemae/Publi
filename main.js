@@ -15,13 +15,22 @@
     }
     }*/
     //Modal popup
+   
+
     var modal = document.querySelector(".modal");
     var close = document.querySelector(".close");
+    var html = document.getElementById("html");
     function popUp(){
+        
+    
+    var scrollHeight = window.pageYOffset;
         modal.style.display = "flex";
+        modal.style.top = scrollHeight + "px";
+       html.style.overflow = "hidden";
     }
     close.addEventListener("click", function(){
         modal.style.display = "none";
+        html.style.overflow = "scroll";
     });
     
 
