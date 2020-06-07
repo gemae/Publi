@@ -46,16 +46,60 @@
     //TRENDLIST SCROLL
     var trendlist = document.getElementById("trendList");
     var sticky = trendlist.offsetHeight;
-    console.log(sticky);
+   
     function scrollWin(){
+        var winSize = window.innerWidth;
     if(window.pageYOffset >= sticky){
         trendlist.classList.add("fixedCont");
     }
     else{
         trendlist.classList.remove("fixedCont");
     }
+    if(winSize <= 1005){
+        shrinkFunc();
+    }
+ 
 }
 
+//for Profile Image Animation 
+    //for shrink profile purposes
+   
+    var profileToShink = document.querySelector(".top-profile-cont .profile-photo");
+    var profileToShinkHeight = profileToShink.offsetHeight;
+    
+    //top elements of profileto shrink
+    var firstEl =  document.querySelector(".to-fixed-top");
+    var secondEl = document.querySelector(".profile-images .cover-photo");
+    var totalHeight = secondEl.offsetHeight;
+    var targetScroll = totalHeight - 45;
+    var scale = 1;
+    var lastScrollTop = 0;
+
+       //for picture animation
+    function shrinkFunc(){
+       let scrollHeight2 = window.pageYOffset;
+       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+       if(scrollTop > lastScrollTop){
+           if(scrollHeight2 >= targetScroll){
+               scale -= .01;
+               if(scale >= .5){
+                   profileToShink.style.transform = "scale" + "("+scale+")";
+               }
+           }    
+       }
+       else{
+           
+           if(scale != 1){
+               scale += .01;
+               profileToShink.style.transform = "scale" + "("+scale+")";
+           }
+           if(scrollHeight2 <= totalHeight/2 ){
+               profileToShink.style.transform = "scale(1)";
+                scale=1;  
+            }
+       }
+       lastScrollTop = scrollTop;
+    }
  //POST/REPLIES/LIKES FUNCTIONS
  var profileTabBtn = document.querySelectorAll(".profile-nav-list .pnav-li");
  var tabPanels = document.querySelectorAll(".post-tweet-container .cont");
@@ -228,7 +272,6 @@ function addContainer() {
             delLikes(clone);
            }
            
-
        }
        
    }
