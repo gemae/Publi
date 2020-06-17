@@ -58,7 +58,7 @@
     if(winSize <= 1005){
         shrinkFunc();
     }
- 
+    
 }
 
 //for Profile Image Animation 

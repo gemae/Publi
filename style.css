@@ -161,7 +161,8 @@ html{
     flex-grow: 1;
     box-sizing: border-box;
     position: relative;
-    display: flex;
+    padding: 2rem;
+    
 }
 /*Navigation*/
 .list .fa-american-sign-language-interpreting{
@@ -531,8 +532,7 @@ button[type="button"]:focus, button[type="button"]:focus{
  
     background-color:rgb(225, 245, 243);
     border-radius: 20px;
-    margin: 2rem;
-    position: relative;
+    box-sizing: border-box;
 }
 /*connect to javascript for fixed container*/
 .fixedCont{
@@ -544,7 +544,7 @@ button[type="button"]:focus, button[type="button"]:focus{
    
     box-sizing: border-box;
     list-style: none;
-    min-width: 300px;
+    width: 100%;
     padding: 1rem;
     border-top: 1px solid var(--fade-font2);
 }
@@ -592,7 +592,7 @@ button[type="button"]:focus, button[type="button"]:focus{
         min-width:330px;
     }
     .trend-list li{
-        min-width:270px
+       min-width: 0;
     }
     
 }
