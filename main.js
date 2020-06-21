@@ -100,14 +100,12 @@
        }
        lastScrollTop = scrollTop;
     }
- //POST/REPLIES/LIKES FUNCTIONS
- var profileTabBtn = document.querySelectorAll(".profile-nav-list .pnav-li");
- var tabPanels = document.querySelectorAll(".post-tweet-container .cont");
+//POST/REPLIES/LIKES FUNCTIONS
+var profileTabBtn = document.querySelectorAll(".profile-nav-list .pnav-li");
+var tabPanels = document.querySelectorAll(".post-tweet-container .cont");
 //to getv Active tab ID
 var current = document.getElementsByClassName("active");
-
 //to set Active link in Profile Navigation
-
 //get link element inside parentNav
 
 var profileParentNav = document.getElementById("profileNav");
