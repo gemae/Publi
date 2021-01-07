@@ -123,10 +123,9 @@ var link = profileParentNav.getElementsByClassName("pnav-li");
  }
 showTab(0);
 
-//set actice button tab
+//set active button tab
 for(var i = 0; i < link.length; i++){
-    link[i].addEventListener("click", function(){
-        
+    link[i].addEventListener("click", function(){ 
         currentTab(current,this);
     });
 }
@@ -140,17 +139,17 @@ function currentTab(current,li){
 function addContainer() {
         //cretate parent element
         var elem = document.createElement("div");
-        //create parent container for post and username 
+       //create parent container for post and username 
        var postCont = document.createElement("div");
        //create post child element
        var tweet = document.createElement("p");
        //create label element for Name and Username 
        var name = document.createElement("label");
        var uName =  document.createElement("label");
-        //create profile picture-container in tweet container
-        var profileCont = document.createElement("div");
-        var img = document.createElement("img");
-        //create btn container
+       //create profile picture-container in tweet container
+       var profileCont = document.createElement("div");
+       var img = document.createElement("img");
+       //create btn container
        var btnCont = document.createElement("div");
        //create tweet crud child element
        var commentBtn = document.createElement("button");
@@ -169,12 +168,11 @@ function addContainer() {
        elem.appendChild(profileCont);
 
        //to insert the child element on first array list in parent
-       parentEl.insertBefore(elem, parentEl.getElementsByTagName("div")[0]); 
-      
+       parentEl.insertBefore(elem, parentEl.getElementsByTagName("div")[0]);    
        profileCont.classList.add("profile-pic-cont");
        profileCont.appendChild(img);
        img.classList.add("profile-pic");
-        //add tweet post to parent element
+       //add tweet post to parent element
        elem.appendChild(postCont);
        postCont.classList.add("post-container");
 
@@ -190,34 +188,34 @@ function addContainer() {
       
        //add name text to label elemnt
        //get the text first from profile
-        var nameFromProf = document.getElementById("profileName").innerText;
-        var uNameFromProf = document.getElementById("userName").innerText;
-        //then add the getText to  your created label
-        name.innerHTML = nameFromProf;
-        uName.innerHTML = uNameFromProf;
-        //add profile picture
+       var nameFromProf = document.getElementById("profileName").innerText;
+       var uNameFromProf = document.getElementById("userName").innerText;
+       //then add the getText to  your created label
+       name.innerHTML = nameFromProf;
+       uName.innerHTML = uNameFromProf;
+       //add profile picture
         //get profile first
          var profilePic = document.getElementById("profilePhoto").getAttribute("src");
         //add the getAttribute to created ELement Image
         img.setAttribute("src", profilePic);
         
-         //add buttons to container and add container to parent Div
-       for(let l = 0; l< btnArr.length; l++){
+        //add buttons to container and add container to parent Div
+        for(let l = 0; l< btnArr.length; l++){
           
            btnCont.appendChild(btnArr[l]);
            btnArr[l].classList.add("btn");
-       }
+        }
        
-       elem.appendChild(btnCont);
-       btnCont.classList.add("tweeted-cont");
-       //Add icons to Anchor tags
-       var listChild = btnCont.children;
+        elem.appendChild(btnCont);
+        btnCont.classList.add("tweeted-cont");
+        //Add icons to Anchor tags
+        var listChild = btnCont.children;
 
-       for(el of listChild ){
+        for(el of listChild ){
         el.appendChild(document.createElement("i"));
-       }
+        }
        
-       var iEl = btnCont.getElementsByTagName("i");
+        var iEl = btnCont.getElementsByTagName("i");
           iEl[0].classList.add("fa");
           iEl[0].classList.add("fa-comment");
           iEl[1].classList.add("fa");
@@ -225,25 +223,25 @@ function addContainer() {
           iEl[2].classList.add("fa");
           iEl[2].classList.add("fa-trash");
 
-       //get and add the Tweeted caption
-          tweet.innerHTML = document.getElementById("inputContent").value;
-          document.getElementById("inputContent").value = "";
+        //get and add the Tweeted caption
+        tweet.innerHTML = document.getElementById("inputContent").value;
+        document.getElementById("inputContent").value = "";
      
-     //COMMENT
-     var repName = name.innerText;
-     var repPost = tweet.innerText;
-     commentBtn.onclick = function(){
+        //COMMENT
+        var repName = name.innerText;
+        var repPost = tweet.innerText;
+        commentBtn.onclick = function(){
         popUp(img,repName,repPost);
-    }
+        }
        
         //Count Number of Tweets
         var numOfTweet = parentEl.children.length;
         numTweet(numOfTweet);
-       //HEART/LIKE BUTTON FUNCTION
-       var parentHeart = heartBtn.firstElementChild;
+        //HEART/LIKE BUTTON FUNCTION
+        var parentHeart = heartBtn.firstElementChild;
         var clone;
-       var parentChildColor = 0;
-       heartBtn.onclick = function () {
+        var parentChildColor = 0;
+        heartBtn.onclick = function () {
            if(parentChildColor == 0){
                parentHeart.style.color = "rgb(206, 74, 74)";
                parentChildColor = 1;
@@ -254,25 +252,23 @@ function addContainer() {
                parentHeart.style.color = "rgb(72, 151, 145)";
                parentChildColor = 0;
                delLikes(clone);
-           }
-           
-       }
-      showTab(0);
+           } 
+        }
 
-       //delete tweet
-       var parentDelete = document.getElementById("parents");
-       var parentLikes = document.getElementById("likesId");
+        showTab(0);
+
+        //delete tweet
+        var parentDelete = document.getElementById("parents");
+        var parentLikes = document.getElementById("likesId");
            deleteBtn.onclick = function () {
            parentDelete.removeChild(elem);
            var numOfTweet = parentEl.children.length;
            numTweet(numOfTweet);
            if(parentChildColor == 1) {
             delLikes(clone);
-           }
-           
+           }    
+         }
        }
-       
-   }
    
 
    function numTweet(num){
